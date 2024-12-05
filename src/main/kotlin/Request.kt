@@ -2,7 +2,7 @@ package org.example
 
 // Open class means subclasses can override and extend this, and all variables / functions are initalized
 open class Request {
-    private val privateClientId: Long = 123L // Only superclass can touch
+    private val privateClientId: Long = 123L // Only class can touch
     protected val protectedServiceVal: String = "Josh" // Protected means only superclass and sub class can reach.
     internal val internalVal: Int = 123 // Consumers can access if within the same module!!
     val publicAccessBool: Boolean = true // public access so consumers can access.

@@ -2,10 +2,24 @@ package org.example
 
 fun main() {
     println("Hello World!")
-    val request = RequestImpl()
+
+    // Open class can be directly instantiated given it has initialised all of its' classes
+    val request = Request()
     request.internalVal
     request.publicAccessBool
-//    request.service  // Cannot access service which is protected, so only subClass and superclass can have access.
+    request.publicAccessBool2
+    request.doSomething()
+//    request.service // Cannot access service which is protected, so only subClass and superclass can have access.
+
+
+    // Uses much of the same as above, except for the cases where open modifiers have been overwritten
+    // But RequestImpl inherits from the open Request and extends it
+    val requestImpl = RequestImpl()
+    requestImpl.internalVal
+    requestImpl.publicAccessBool
+    requestImpl.publicAccessBool2
+    requestImpl.doSomething() // Like this doSomething has been overwritten
+//    requestImpl.service  // Cannot access service which is protected, so only subClass and superclass can have access.
 
 
     val abstractRequest = RequestImplAbstract()
