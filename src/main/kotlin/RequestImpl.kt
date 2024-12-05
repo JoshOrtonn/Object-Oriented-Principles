@@ -74,7 +74,7 @@ class NewRequestImpl: OpenRequestImpl() {
 
 // But interesting to note that classes support multiple inheritance only for interfaces
 class AnimalRequest: IRequest, Animal {
-    override val clientId: Long
+    override val clientId: Long // This would clash if clientId: Int within animal, but Long in IRequest, so something to note.
         get() = TODO("Not yet implemented")
     override val protectedServiceVal: String
         get() = TODO("Not yet implemented")
