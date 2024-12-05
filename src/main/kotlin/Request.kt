@@ -36,16 +36,19 @@ abstract class AbstractRequest {
 interface IRequest {
     // all have to be defined as public abstract
     val clientId: Long
-    val privateClientId: Long
+//    private val privateClientId: Long // have to be public or open
     val protectedServiceVal: String
-    val internalVal: Int
+//    internal val internalVal: Int
     val publicAccessBool: Boolean
 
+//    private val privateBool: Boolean // Cannot have private, all must be public abstract
+
     // But functions can be private
-    fun getClientId(): Long = privateClientId
+    // And can be uninitialized or init
+    private fun getClientId(): Long = clientId
     fun getInternalVal(): Int
-    private fun doSomething(): Long {
+    fun doSomething(): Long {
         println("This function is allowed to be defined")
-        return 123
+        return getClientId()
     }
 }
