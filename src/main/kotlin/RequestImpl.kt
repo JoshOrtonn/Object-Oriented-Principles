@@ -71,3 +71,20 @@ class NewRequestImpl: OpenRequestImpl() {
         get() = super.publicAccessBool
     override val openVariable = "sdsd"
 }
+
+// But interesting to note that classes support multiple inheritance only for interfaces
+class AnimalRequest: IRequest, Animal {
+    override val clientId: Long
+        get() = TODO("Not yet implemented")
+    override val protectedServiceVal: String
+        get() = TODO("Not yet implemented")
+    override val publicAccessBool: Boolean
+        get() = TODO("Not yet implemented")
+
+    override fun getInternalVal(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override val legs: Int
+        get() = TODO("Not yet implemented")
+}

@@ -52,3 +52,10 @@ interface IRequest {
         return getClientId()
     }
 }
+interface Animal {
+    val clientId: Int
+    fun bark(): String {
+        return "Rawr"
+    }
+    val legs: Int
+}
